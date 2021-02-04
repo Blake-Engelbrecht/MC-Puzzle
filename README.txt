@@ -1,3 +1,4 @@
+#Missionaires and Cannibals
 Python solution to the popular Missionaries and Cannibals puzzle. This solution implements an AI Breadth-First Search (BFS) algorithm. 
 
 Problem Statement: 
