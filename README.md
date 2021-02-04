@@ -11,6 +11,9 @@ Three missionaries and three cannibals are on one side of a river, along with a 
 more info can be found on the [wiki](https://en.wikipedia.org/wiki/Missionaries_and_cannibals_problem)
 
 Here is what the output looks like: 
+
+
+
 ![MCoutput](MCoutput.png)
 
 ## Contributors
