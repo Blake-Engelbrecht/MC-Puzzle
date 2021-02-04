@@ -14,7 +14,7 @@ Here is what the output looks like:
 
 
 
-![MCoutput](MCoutput.png)
+![MCoutput](output.png)
 
 ## Contributors
 Blake Engelbrecht 
