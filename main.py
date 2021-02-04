@@ -42,32 +42,32 @@ class State():
 #all valid moves within the current state space.
 def successors(current_state):
     moves = [];
-    if current_state.boat == 'right':
-        new_state = State(current_state.cLeft, current_state.mLeft +2, 'left',
+    if current_state.boat == '| right|':
+        new_state = State(current_state.cLeft, current_state.mLeft +2, '|left  |',
                     current_state.cRight, current_state.mRight - 2) # 2 missionaries cross left <- right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft + 2, current_state.mLeft, 'left', 
+        new_state = State(current_state.cLeft + 2, current_state.mLeft, '|left  |', 
                             current_state.cRight - 2, current_state.mRight) # 2 cannibals cross left <- right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft + 1, current_state.mLeft + 1, 'left',
+        new_state = State(current_state.cLeft + 1, current_state.mLeft + 1, '|left  |',
                             current_state.cRight - 1, current_state.mRight -1) # 1 missionary and 1 cannibal cross left <- right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft, current_state.mLeft + 1, 'left',
+        new_state = State(current_state.cLeft, current_state.mLeft + 1, '|left  |',
                             current_state.cRight, current_state.mRight - 1) # 1 missionary crosses left <- right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft + 1, current_state.mLeft, 'left',
+        new_state = State(current_state.cLeft + 1, current_state.mLeft, '|left  |',
                             current_state.cRight - 1, current_state.mRight) # 1 cannibal crosses left <- right
 
         if new_state.is_valid_state():
@@ -75,31 +75,31 @@ def successors(current_state):
             moves.append(new_state) #state is created and validated but no moves are made 
 
     else:
-        new_state = State(current_state.cLeft, current_state.mLeft - 2, 'right',
+        new_state = State(current_state.cLeft, current_state.mLeft - 2, '| right|',
                     current_state.cRight, current_state.mRight + 2) # 2 missionaries cross left -> right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft - 2, current_state.mLeft, 'right',
+        new_state = State(current_state.cLeft - 2, current_state.mLeft, '| right|',
                             current_state.cRight + 2, current_state.mRight) # 2 cannibals cross left -> right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft - 1, current_state.mLeft - 1, 'right',
+        new_state = State(current_state.cLeft - 1, current_state.mLeft - 1, '| right|',
                             current_state.cRight + 1, current_state.mRight + 1) # 1 missionary and 1 cannibal cross left -> right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft, current_state.mLeft - 1, 'right',
+        new_state = State(current_state.cLeft, current_state.mLeft - 1, '| right|',
                             current_state.cRight, current_state.mRight + 1) # 1 missionary crosses left -> right
 
         if new_state.is_valid_state():
             new_state.parent = current_state
             moves.append(new_state)
-        new_state = State(current_state.cLeft - 1, current_state.mLeft, 'right',
+        new_state = State(current_state.cLeft - 1, current_state.mLeft, '| right|',
                             current_state.cRight + 1, current_state.mRight) # 1 cannibal crosses left -> right
 
         if new_state.is_valid_state():
@@ -110,7 +110,7 @@ def successors(current_state):
 
 #search algorithm used to find the goal state. 
 def BFS():
-    initial_state = State(0,0,'right',3,3)
+    initial_state = State(0,0,'| right|',3,3)
     if initial_state.is_goal_state():
         return initial_state
 
